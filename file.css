@@ -1,0 +1,350 @@
+*,
+*::before,
+*::after{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'League Spartan',sans-serif;
+}
+:root {
+    --colorDark1: #112d4e;
+    --colorDark2: #3f72af;
+    --colorLight1: #dbe2ef;
+    --colorLight2: #f9f7f7;
+}
+
+.wrapper{
+    width:100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    color:var(--colorLight2);
+    background-image: linear-gradient(160deg,#112d4e 0%,#3f72af 100%);
+
+}
+
+.wrapper.clouds{
+    background-size:cover;
+    background-image: url("./images/desne_clouds.jpg");
+    color:white;
+}
+.wrapper.clear{
+    background-size:cover;
+    color:black;
+    background-image: url("./images/clear.jpg");
+}
+.wrapper.mist{
+    background-size:cover;
+    color:black;
+    background-image: url("./images/mist.jpg");
+}
+.wrapper.rain{
+    background-size:cover;
+    color:white;
+    background-image: url("./images/rain.jpg");
+}
+.wrapper.snow{
+    background-size:cover;
+    color:black;
+    background-image: url("./images/snow.jpg");
+}
+.wrapper.fog{
+    background-size:cover;
+    color:black;
+    background-image: url("./images/foggy.jpg");
+}
+.wrapper.thunderstorm{
+    background-size:cover;
+    color:black;
+    background-image: url("./images/thunder.jpg");
+}
+.wrapper.haze{
+    background-size:cover;
+    color:black;
+    background-image: url("./images/haze.jpg");
+}
+.wrapper.few{
+    background-size:cover;
+    color:black;
+    background-image: url("./images/few_clouds.jpg");
+}
+h1{
+    text-align: center;
+    text-transform:capitalize;
+    padding-top:20px;
+    user-select: none;
+}
+
+.tab-container{
+    max-width: 550px;
+    margin: 0 auto;
+    margin-top: 4rem;
+    display:flex;
+    justify-content: space-between;
+    width:90%;
+}
+.tab{
+    cursor: pointer;
+    font-size: 0.875rem;
+    padding:5px 8px;
+    letter-spacing: 1.75px;
+   
+}
+
+.tab.current-tab{
+    background-color: rgba(219,226,239,0.5);
+    border-radius: 4px;
+}
+.weather-container{
+    margin-block: 4rem;
+}
+.btn{
+    border-radius:5px ;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    background-color: var(--colorDark2);
+    cursor: pointer;
+    padding: 10px 30px;
+    appearance: none;
+    color: white;
+    border: none;
+    margin-bottom: 10px;
+
+    /* default behavior button ka khtm krne k liye */
+    /* all: unset;  */
+}
+.sub-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.grant-location-container{
+    display:none;
+}
+
+.grant-location-container.active{
+    display: flex;
+    user-select: none;
+}
+.grant-location-container img{
+    margin-bottom: 2rem;
+}
+
+.grant-location-container p:first-of-type{
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-align: center;
+
+}
+.grant-location-container p:last-of-type{
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+}
+
+.loading-container{
+    display: none;
+}
+
+.loading-container.active{
+    display: flex;
+}
+
+.loading-container p{
+    text-transform: uppercase;
+}
+.user-info-container{
+    display: none;
+} 
+.user-info-container.active{
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    letter-spacing: 0.80px;
+    
+}
+.user-info-container p[ data-weatherdesc]{
+    text-transform: capitalize;
+}
+.name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:0 0.5rem ;
+    margin-bottom: 1rem;
+
+}
+.temp{
+    font-weight: 100;
+}
+
+.user-info-container p{
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.user-info-container img{
+    width: 90px;
+    height: 90px;
+}
+
+.name p{
+    font-size: 2rem;
+
+}
+.name img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+.user-info-container p[data-temp]{
+    font-size: 2.50rem;
+    font-weight:400;
+    user-select: none;
+}
+
+.para-conatiner2{
+    display: flex;
+}
+.para-container{
+    width: 90%;
+    display: flex;
+    gap:10px 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+
+}
+
+.parameter{
+    width: 30%;
+    max-width: 200px;
+    background-color: rgba(219,226,239,0.5);
+    border-radius: 5px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap:5px 0;
+    align-items: center;
+    transition: all 0.5s;
+}
+.parameter.wind{
+    margin-left:10px;
+}
+
+.parameter:hover{
+    cursor:auto;
+    transform: scale(1.1);
+}
+.parameter img{
+    height: 50px;
+    width: 50px;
+
+}
+
+.parameter p:first-of-type{
+    font-size:1.15rem;
+    font-weight: 400;
+    text-transform:capitalize;
+}
+.parameter p:last-of-type{
+    font-size:1rem;
+    font-weight: 200;
+}
+
+.form-container{
+    display: none;
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap:0 10px;
+    margin-bottom: 3rem;
+}
+.form-container.active{
+    display: flex;
+}
+
+.form-container input{
+    all: unset;
+    width: calc(100% -  80px);
+    height: 40px;
+    padding:0 20px;
+    background-color: rgba(219,226,239,0.5);
+    border-radius: 10px;
+}
+
+.form-container input::placeholder{
+    color:rgba(255,255,255,0.7);
+}
+
+.form-container input:hover{
+    outline: 3px solid rgba(255,255,255,0.7);
+}
+
+.form-container .btn{
+    padding: unset;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    border-radius: 100%;
+    margin-bottom: 1px;
+}
+
+.error{
+    display:none;
+    margin-left:-2.5%;
+}
+
+.error.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+.errorpara{
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:white;
+
+}
+.wind{
+    margin-left:30px;
+}
+
+/* .six-card-container{
+    align-items: center;
+    justify-content: center;
+} */
+/* .row1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.row2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
